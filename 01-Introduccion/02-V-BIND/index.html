@@ -9,18 +9,35 @@
       <script src="https://unpkg.com/vue@3"></script>
     </head>
     <body>
-      {{ message }}
+
+      <div :class="clase" :style="color">
+       {{ message }} 
+      </div>
+      
       <br>
       {{ usuarios.nombre + ' '+ usuarios.apellido}}
-      
     </body>
+
+
+    <br>
+
+    <img  v-bind:src="imagen" alt="">
+    <br>
+    <img  :src="gif" alt="">
+    <br>
+    <a :href="url">Google</a>
   </html>
 </div>
 <script>
   Vue.createApp({
     data() {
       return {
-        message: "init!",
+        url:"https://www.google.com/",
+       gif:"https://c.tenor.com/1qrYT711uEoAAAAC/cargando.gif",
+       imagen:"https://www.google.com/images/branding/googlelogo/1x/googlelogo_color_272x92dp.png",
+        clase:"pruebas1",
+        color: "color: rgb(226, 121, 1);",
+        message: "init2!",
         usuarios: {
           nombre:"Matin",
           apellido:"Brito"
@@ -29,3 +46,11 @@
     },
   }).mount("#app");
 </script>
+<style>
+.pruebas1{
+  font-size: 215%;
+}
+.pruebas2{
+  font-size: 115%;
+}
+</style>

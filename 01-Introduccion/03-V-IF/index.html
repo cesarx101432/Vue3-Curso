@@ -9,10 +9,11 @@
       <script src="https://unpkg.com/vue@3"></script>
     </head>
     <body>
-      {{ message }}
-      <br>
-      {{ usuarios.nombre + ' '+ usuarios.apellido}}
+
+     <div v-if="edad > 18 || flag === true">Es menor</div>
+     <div v-else-if="edad >= 18 && flag">Es mayor</div>
       
+
     </body>
   </html>
 </div>
@@ -20,12 +21,19 @@
   Vue.createApp({
     data() {
       return {
-        message: "init!",
-        usuarios: {
-          nombre:"Matin",
-          apellido:"Brito"
-        },
+        edad:17,
+        flag:true
+
+
       };
     },
   }).mount("#app");
 </script>
+<style>
+.pruebas1{
+  font-size: 215%;
+}
+.pruebas2{
+  font-size: 115%;
+}
+</style>
