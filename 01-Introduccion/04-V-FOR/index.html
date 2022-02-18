@@ -1,0 +1,42 @@
+<div id="app">
+  <!DOCTYPE html>
+  <html lang="en">
+    <head>
+      <meta charset="UTF-8" />
+      <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+      <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+      <title>Document</title>
+      <script src="https://unpkg.com/vue@3"></script>
+    </head>
+    <body>
+
+      <!-- <div v-for="item in data">
+        {{item.nombre}}
+        {{item.edad}}
+      </div> -->
+
+      <div v-for="(item, index) in data" :key="index">
+        {{item.nombre}}
+        {{item.edad}}
+      </div>
+
+    </body>
+  </html>
+</div>
+<script>
+  Vue.createApp({
+    data() {
+      return {
+        data:[
+        { edad:17,nombre:"martin" },
+        { edad:18,nombre:"cesar" },
+        { edad:23,nombre:"jose" },
+        { edad:16,nombre:"toño" }
+        ]
+      };
+    },
+  }).mount("#app");
+</script>
+<style>
+
+</style>
